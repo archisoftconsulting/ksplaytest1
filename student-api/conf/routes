@@ -1,0 +1,28 @@
+# Routes
+# This file defines all application routes (Higher priority routes first)
+# ~~~~
+
+# Home page
+###GET     /                           controllers.PersonController.index()
+###POST    /person                     controllers.PersonController.addPerson()
+###GET     /persons                    controllers.PersonController.getPersons
+
+# Map static resources from the /public folder to the /assets URL path
+###GET     /assets/*file               controllers.Assets.at(path="/public", file)
+
+
+
+GET     /              controllers.StudentController.listStudents()
+GET     /all           controllers.StudentController.listStudents()
+GET    /find/:id       controllers.StudentController.retrieve(id)
+GET    /retrieveBy     controllers.StudentController.retrieveBy()
+POST    /              controllers.StudentController.create()
+PUT     /              controllers.StudentController.update()
+DELETE  /:id           controllers.StudentController.delete(id)
+GET     /assets/*file  controllers.Assets.versioned(path="/public", file: Asset)
+POST    /ag            controllers.ApiGatewayController.create()
+GET     /ag/all        controllers.ApiGatewayController.listStudents()
+DELETE  /ag/:id        controllers.ApiGatewayController.deleteStudent(id)
+PUT     /ag            controllers.ApiGatewayController.update()
+GET    /ag/:id         controllers.ApiGatewayController.retrieve(id)
+GET    /ag-retrieveBy  controllers.ApiGatewayController.retrieveBy()
